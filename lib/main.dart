@@ -13,7 +13,6 @@ class AplikasiAbsensi extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => AbsensiProvider(),
       child: MaterialApp(
-        title: 'Aplikasi Absensi',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),

@@ -10,38 +10,40 @@ class AbsensiScreen extends StatelessWidget {
     final provider = Provider.of<AbsensiProvider>(context);
     final daftarSiswa = provider.daftarSiswa;
 
-    return Column(
-      children: [
-        Expanded(
-          child: ListView.builder(
-            itemCount: daftarSiswa.length,
-            itemBuilder: (context, index) {
-              final siswa = daftarSiswa[index];
-              return ListTile(
-                title: Text(siswa.nama),
-                trailing: Checkbox(
-                  value: siswa.hadir,
-                  onChanged: (value) {
-                    siswa.hadir = value!;
-                    provider.notifyListeners();
-                  },
-                ),
-              );
-            },
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Absensi Siswa'),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: daftarSiswa.length,
+              itemBuilder: (context, index) {
+                final siswa = daftarSiswa[index];
+                return ListTile(
+                  title: Text(siswa.nama),
+                  trailing: Checkbox(
+                    value: siswa.hadir,
+                    onChanged: (value) {
+                      siswa.hadir = value!;
+                      provider.notifyListeners();
+                    },
+                  ),
+                );
+              },
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: ElevatedButton(
-            onPressed: daftarSiswa.isEmpty
-                ? null
-                : () {
-                    provider.simpanAbsensi();
-                  },
-            child: const Text('Simpan Absensi'),
-          ),
-        ),
-      ],
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: daftarSiswa.isEmpty
+            ? null
+            : () {
+                provider.simpanAbsensi();
+              },
+        child: const Icon(Icons.save),
+      ),
     );
   }
 }

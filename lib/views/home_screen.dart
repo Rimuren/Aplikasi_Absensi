@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Aplikasi Absensi'),
+        title: const Text('Absensi Siswa',style: TextStyle(fontSize: 20)),
       ),
       body: _halaman[_halamanSaatIni],
       bottomNavigationBar: BottomNavigationBar(

@@ -7,7 +7,9 @@ class AbsensiProvider extends ChangeNotifier {
     Siswa(nama: 'Budi'),
     Siswa(nama: 'Citra'),
     Siswa(nama: 'Diky'),
-    Siswa(nama: 'Rifki')
+    Siswa(nama: 'Rifki'),
+    Siswa(nama: 'Legar'),
+    Siswa(nama: 'Fariz')
   ];
 
   final List<Map<String, dynamic>> _riwayat = [];

@@ -11,9 +11,6 @@ class AbsensiScreen extends StatelessWidget {
     final daftarSiswa = provider.daftarSiswa;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Absensi Siswa'),
-      ),
       body: Column(
         children: [
           Expanded(
